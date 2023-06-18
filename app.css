@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 2px solid black;
+	height: 100vh;
+	font-family: 'Inter', sans-serif;
+	font-family: 'Poppins', sans-serif;
+}
+.xbox,
+.playstation {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid red;
+	width: 100%;
+	height: 100vh;
+}
+.playstation {
+	background: url(https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80);
+	object-fit: fill;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.xbox {
+	background: url(https://images.unsplash.com/photo-1605901058027-ebdb31733cbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80);
+	object-fit: fill;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.xbox.hover,
+.playstation.hover {
+	width: 70vw;
+	transition: all 1s;
+}
+.xbox.cut,
+.playstation.cut {
+	width: 30vw;
+	transition: all 1s;
+}
+.xbox,
+.playstation {
+	position: relative; /* Required for positioning pseudo-element */
+}
+
+.xbox::after,
+.playstation::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.5
+	); /* Adjust the color and opacity as needed */
+	z-index: 1; /* Ensure the overlay is above the background image */
+}
+button,
+h2 {
+	z-index: 10;
+}
+h2 {
+	color: aliceblue;
+	text-transform: uppercase;
+}
+button {
+	margin-top: 60px;
+	color: aliceblue;
+	padding: 20px 40px;
+	border: 2px solid aliceblue;
+	background-color: black;
+}
